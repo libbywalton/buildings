@@ -2,7 +2,7 @@ package com.qa;
 
 import java.util.Arrays;
 
-public class BusinessBuilding extends Building{
+public class BusinessBuilding extends Building implements IsProfitable {
 
     //PRIVATE ATTRIBUTES
     private String businessName;
@@ -85,4 +85,8 @@ public class BusinessBuilding extends Building{
         this.businessStatus = businessStatus;
     }
 
+    @Override
+    public double calculateProfit() {
+        return revenue - losses;
+    }
 }

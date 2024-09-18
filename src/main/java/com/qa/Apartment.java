@@ -1,6 +1,6 @@
 package com.qa;
 
-public class Apartment extends Accommodation{
+public class Apartment extends Accommodation {
     public Apartment(String address) {
         super(address);
     }

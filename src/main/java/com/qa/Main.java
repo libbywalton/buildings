@@ -45,6 +45,12 @@ public class Main {
         System.out.println(topBrands);
 
         BusinessBuilding skyOsterley = new BusinessBuilding("Grant Way, Isleworth TW7 5QD", BuildingStatus.OWNED, "Comcast", 5000000, "Sky");
+        skyOsterley.setRevenue(10000);
+        skyOsterley.setLosses(10);
+
+        BusinessBuilding skyTower = new BusinessBuilding("Grant Way, Isleworth TW7 5QP", BuildingStatus.OWNED, "Comcast", 5000000, "Sky");
+        skyTower.setRevenue(1000);
+        skyTower.setLosses(1);
 
         Building[] buildings = {shard, walkieTalkie, batterseaPowerStation, skyOsterley};
 
@@ -56,10 +62,17 @@ public class Main {
         // Abstract Classes & Methods
         Apartment apartment = new Apartment("19 Alexander Road, SOUTHALL, UB65 2IZ");
         House house = new House("11 Church Lane, COVENTRY, CV29 1IG");
+        house.setRentalRate(1500);
 
         Accommodation[] accommodations = {apartment, house};
         for (Accommodation accom : accommodations){
             System.out.println(accom.parkingBehaviour("BMW"));
+        }
+
+        IsProfitable[] investments = {skyOsterley, skyTower, house};
+
+        for (IsProfitable profit : investments){
+            System.out.println(profit.calculateProfit());
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.qa;
 
-public class House extends Accommodation{
+public class House extends Accommodation implements IsProfitable {
     public House(String address) {
         super(address);
     }
@@ -16,5 +16,12 @@ public class House extends Accommodation{
     @Override
     public String parkingBehaviour(String vehicle) {
         return "You have parked your " + vehicle + " on the drive way.";
+    }
+
+    @Override
+    public double calculateProfit() {
+        // Magic Calculations Of Mortgage Installments
+        double magicCalc = 925;
+        return this.getRentalRate() - magicCalc;
     }
 }
