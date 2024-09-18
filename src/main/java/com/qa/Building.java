@@ -105,7 +105,7 @@ public class Building {
 
     @Override
     public String toString() {
-        return "Building{" +
+        return "Building" +
                 "address='" + address + '\'' +
                 ", value=" + value +
                 ", owner='" + owner + '\'' +
@@ -114,7 +114,6 @@ public class Building {
                 ", status=" + status +
                 ", rented=" + rented +
                 ", rentalRate=" + rentalRate +
-                ", outstandingMortgage=" + outstandingMortgage +
-                '}';
+                ", outstandingMortgage=" + outstandingMortgage;
     }
 }

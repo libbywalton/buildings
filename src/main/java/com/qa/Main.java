@@ -46,5 +46,15 @@ public class Main {
         topBrands.append(car2);
         topBrands.append(car3);
         System.out.println(topBrands);
+
+        BusinessBuilding skyOsterley = new BusinessBuilding("Grant Way, Isleworth TW7 5QD", BuildingStatus.OWNED, "Comcast", 5000000, "Sky");
+
+        Building[] buildings = {shard, walkieTalkie, batterseaPowerStation, skyOsterley};
+
+        for (Building building : buildings) {
+            System.out.println("------------------------");
+            System.out.println(building);
+        }
+
     }
 }
