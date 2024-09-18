@@ -2,9 +2,6 @@ package com.qa;
 
 public class Main {
     public static void main(String[] args) {
-
-
-
         Building shard = new Building("32 London Bridge St, London SE1 9SG");
         shard.setOutstandingMortgage(1000.0);
         shard.setHeight(310);
@@ -56,5 +53,13 @@ public class Main {
             System.out.println(building);
         }
 
+        // Abstract Classes & Methods
+        Apartment apartment = new Apartment("19 Alexander Road, SOUTHALL, UB65 2IZ");
+        House house = new House("11 Church Lane, COVENTRY, CV29 1IG");
+
+        Accommodation[] accommodations = {apartment, house};
+        for (Accommodation accom : accommodations){
+            System.out.println(accom.parkingBehaviour("BMW"));
+        }
     }
 }
