@@ -17,5 +17,5 @@ public abstract class Accommodation extends Building {
         super(address, status, owner, value);
     }
 
-    public abstract String parkingBehaviour(String vehicle);
+    public abstract String parkingBehaviour(String vehicle) throws NoParkingException;
 }

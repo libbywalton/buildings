@@ -1,5 +1,8 @@
 package com.qa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Building shard = new Building("32 London Bridge St, London SE1 9SG");
@@ -63,10 +66,11 @@ public class Main {
         Apartment apartment = new Apartment("19 Alexander Road, SOUTHALL, UB65 2IZ");
         House house = new House("11 Church Lane, COVENTRY, CV29 1IG");
         house.setRentalRate(1500);
+        house.setParkingCapacity(2);
 
         Accommodation[] accommodations = {apartment, house};
         for (Accommodation accom : accommodations){
-            System.out.println(accom.parkingBehaviour("BMW"));
+//            System.out.println(accom.parkingBehaviour("BMW"));
         }
 
         IsProfitable[] investments = {skyOsterley, skyTower, house};
@@ -74,5 +78,23 @@ public class Main {
         for (IsProfitable profit : investments){
             System.out.println(profit.calculateProfit());
         }
+
+        System.out.println("...........................");
+
+        List<String> mycars = new ArrayList<>();
+        mycars.add("Audi");
+        mycars.add("Mercedes");
+        mycars.add("Polestar");
+        for (String car : mycars) {
+            try {
+                System.out.println("Opened Gate.");
+                System.out.println(car + ": " + house.parkingBehaviour(car));
+            } catch (NoParkingException e) {
+                System.out.println(car + ": Can't park here! \n" + e.getMessage());
+            } finally {
+                System.out.println("Closed Gate.");
+            }
+        }
+
     }
 }
